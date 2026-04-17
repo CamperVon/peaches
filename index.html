@@ -577,6 +577,8 @@ body {
 
 .engine-text em { color: var(--peach-deep); font-style: normal; font-weight: 500; }
 
+.engine-art-mobile { display: none; position: relative; z-index: 1; }
+
 .footer {
   padding: 5rem 2rem;
   text-align: center;
@@ -740,6 +742,8 @@ body {
   .metaphor::before { display: none; }
   .metaphor-text { white-space: normal; }
   .metaphor-art-mobile { display: block; width: 240px; margin-top: 2.5rem; }
+  .engine::after { display: none; }
+  .engine-art-mobile { display: block; width: 260px; margin: 2.5rem auto 0; }
 }
 </style>
 </head>
@@ -862,6 +866,7 @@ body {
   <p class="engine-text">
     <span style="color: var(--peach);">PEACHES</span> is a show about small farms and big lies. About a town worth fighting for and a family learning, one bruising season at a time, that the things most worth keeping are the ones you have to tend every single day.
   </p>
+  <img class="engine-art-mobile" src="pie.png" alt="" />
 </section>
 
 
