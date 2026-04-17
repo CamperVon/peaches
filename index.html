@@ -201,15 +201,7 @@ body {
   position: relative;
 }
 
-.theme-quote::before {
-  content: '';
-  display: block;
-  width: 60px;
-  height: 3px;
-  background: var(--peach);
-  margin: 0 auto 2rem;
-  border-radius: 2px;
-}
+.theme-quote::before { display: none; }
 
 .theme-body {
   font-family: 'Lora', serif;
@@ -815,6 +807,7 @@ body {
   .logline, .tone { padding: 4rem 1.5rem; }
   .logline::after { display: none; }
   .metaphor { padding: 3rem 1.5rem; }
+  .theme-quote br { display: none; }
   .metaphor-text { white-space: normal; }
   .metaphor-art-mobile { width: 150vw; max-width: none; margin-left: -25vw; margin-right: -25vw; margin-top: 2rem; }
   .engine::after { display: none; }
@@ -854,7 +847,7 @@ body {
 
 <section class="theme">
   <blockquote class="theme-quote">
-    A peach is one day from perfect, two days from gone.
+    A peach is one day from perfect,<br> two days from gone.
   </blockquote>
   <p class="theme-body">
     Set in the heart of Georgia, PEACHES is the story of <span style="color: var(--peach-deep);">three generations</span> of Calloway women ~ a <span style="color: var(--peach-deep);">grandmother</span> who built an empire from dirt, a <span style="color: var(--peach-deep);">granddaughter</span> who ran from it, and a <span style="color: var(--peach-deep);">twelve-year-old</span> who refuses to let it go.
