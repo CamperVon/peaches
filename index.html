@@ -128,6 +128,8 @@ body {
   opacity: 0;
 }
 
+.hero-subtitle-break { display: none; }
+
 .hero-tagline {
   font-family: 'DM Sans', sans-serif;
   font-size: clamp(0.85rem, 1.5vw, 1rem);
@@ -818,6 +820,7 @@ body {
   .engine-art-mobile { display: block; width: 260px; margin: 2.5rem auto 0; }
   .bio { padding: 5rem 1.5rem; }
   .bio-art { display: none; }
+  .hero-subtitle-break { display: inline; }
 }
 </style>
 </head>
@@ -838,7 +841,7 @@ body {
   <div class="hero-content">
     <img class="peach-icon" src="peaches.png" alt="Watercolor peach" />
     <h1 class="hero-title">PEACHES</h1>
-    <p class="hero-subtitle">The most beautiful things are the most fragile</p>
+    <p class="hero-subtitle">The most beautiful things<span class="hero-subtitle-break"><br></span> are the most fragile</p>
     <p class="hero-tagline">An Original Series by Brandon Camp</p>
   </div>
   <div class="scroll-hint">
