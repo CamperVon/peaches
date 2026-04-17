@@ -611,15 +611,15 @@ body {
 }
 
 .bio-art {
-  flex: 0 0 340px;
+  flex: 0 0 460px;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
 }
 
 .bio-art img {
   width: 100%;
-  max-width: 340px;
+  max-width: 460px;
   height: auto;
   display: block;
   border-radius: 4px;
@@ -831,9 +831,7 @@ body {
   .engine::after { display: none; }
   .engine-art-mobile { display: block; width: 260px; margin: 2.5rem auto 0; }
   .bio { padding: 5rem 1.5rem; }
-  .bio-inner { flex-direction: column; gap: 2.5rem; }
-  .bio-art { flex: none; width: 100%; }
-  .bio-art img { max-width: 280px; margin: 0 auto; }
+  .bio-art { display: none; }
 }
 </style>
 </head>
