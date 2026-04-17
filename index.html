@@ -417,13 +417,17 @@ body {
 }
 
 .metaphor {
-  padding: 4rem 2rem 25rem 2rem;
+  padding: 5rem 2rem;
   text-align: center;
   position: relative;
   background-image: url('texture.png');
   background-size: cover;
   background-position: center;
-  overflow: visible;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .metaphor > p {
@@ -449,21 +453,7 @@ body {
   z-index: 1;
 }
 
-.metaphor::before {
-  content: '';
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 600px;
-  height: 600px;
-  background-image: url('bucket.png');
-  background-size: 600px;
-  background-position: center;
-  background-repeat: no-repeat;
-  opacity: 1;
-  z-index: 10;
-}
+.metaphor::before { display: none; }
 
 .metaphor-text {
   font-family: 'Playfair Display', serif;
@@ -720,7 +710,7 @@ body {
   letter-spacing: 0.1em;
 }
 
-.metaphor-art-mobile { display: none; position: relative; z-index: 1; }
+.metaphor-art-mobile { display: block; width: 500px; max-width: 90%; margin-top: 2rem; position: relative; z-index: 1; }
 
 /* Password Gate */
 #password-gate {
@@ -824,10 +814,9 @@ body {
   .theme, .engine { padding: 5rem 1.5rem; }
   .logline, .tone { padding: 4rem 1.5rem; }
   .logline::after { display: none; }
-  .metaphor { padding: 5rem 1.5rem 3rem; display: flex; flex-direction: column; align-items: center; }
-  .metaphor::before { display: none; }
+  .metaphor { padding: 3rem 1.5rem; }
   .metaphor-text { white-space: normal; }
-  .metaphor-art-mobile { display: block; width: calc(100% + 3rem); max-width: none; margin-left: -1.5rem; margin-right: -1.5rem; margin-top: 2.5rem; }
+  .metaphor-art-mobile { width: calc(100% + 3rem); max-width: none; margin-left: -1.5rem; margin-right: -1.5rem; margin-top: 2rem; }
   .engine::after { display: none; }
   .engine-art-mobile { display: block; width: 260px; margin: 2.5rem auto 0; }
   .bio { padding: 5rem 1.5rem; }
