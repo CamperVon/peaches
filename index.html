@@ -621,6 +621,103 @@ body {
   letter-spacing: 0.1em;
 }
 
+/* Password Gate */
+#password-gate {
+  position: fixed;
+  inset: 0;
+  background: var(--warm-white);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+#password-gate.hidden { display: none; }
+
+.gate-inner {
+  text-align: center;
+  max-width: 380px;
+  width: 100%;
+}
+
+.gate-peach {
+  width: 80px;
+  height: auto;
+  margin: 0 auto 1.5rem;
+  display: block;
+  opacity: 0.85;
+}
+
+.gate-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: var(--peach-deep);
+  letter-spacing: 0.08em;
+  margin-bottom: 0.5rem;
+}
+
+.gate-subtitle {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--text-light);
+  margin-bottom: 2rem;
+}
+
+.gate-input {
+  width: 100%;
+  padding: 0.85rem 1.25rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+  border: 1.5px solid rgba(244, 162, 89, 0.4);
+  border-radius: 8px;
+  background: var(--cream);
+  color: var(--text);
+  outline: none;
+  text-align: center;
+  margin-bottom: 1rem;
+  transition: border-color 0.2s ease;
+}
+
+.gate-input:focus { border-color: var(--peach); }
+
+.gate-input.error { border-color: #c0392b; animation: shake 0.3s ease; }
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-6px); }
+  75% { transform: translateX(6px); }
+}
+
+.gate-btn {
+  width: 100%;
+  padding: 0.85rem 1.25rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 500;
+  background: var(--peach-deep);
+  color: var(--warm-white);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.gate-btn:hover { background: var(--earth); }
+
+.gate-error {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.8rem;
+  color: #c0392b;
+  margin-top: 0.75rem;
+  min-height: 1.2em;
+}
+
 @media (max-width: 768px) {
   .world-grid, .char-grid { grid-template-columns: 1fr; }
   .theme, .metaphor, .engine { padding: 5rem 1.5rem; }
@@ -629,6 +726,17 @@ body {
 </style>
 </head>
 <body>
+
+<div id="password-gate">
+  <div class="gate-inner">
+    <img class="gate-peach" src="peaches.png" alt="Peach" />
+    <h1 class="gate-title">PEACHES</h1>
+    <p class="gate-subtitle">Password required</p>
+    <input class="gate-input" id="gate-input" type="password" placeholder="Enter password" autocomplete="off" />
+    <button class="gate-btn" onclick="checkPassword()">Enter</button>
+    <p class="gate-error" id="gate-error"></p>
+  </div>
+</div>
 
 <section class="hero">
   <div class="hero-content">
@@ -650,7 +758,7 @@ body {
     A peach is one day from perfect<br>and two days from gone.
   </blockquote>
   <p class="theme-body">
-    Set in the heart of Georgia, <span style="color: var(--peach);">PEACHES</span> is the story of a man who came home to bury his past and instead discovers it's the only thing worth saving.
+    Set in the heart of Georgia, <span style="color: var(--peach);">PEACHES</span> is the story of a woman who came home to bury her past and instead discovers it's the only thing worth saving.
   </p>
   <p class="theme-body">
     A heartwarming, deliciously comedic series about fresh starts and family secrets. Told with the warmth of a Southern kitchen ~<br>sweet and savory, and cast-iron hot.
@@ -664,10 +772,10 @@ body {
   <div class="logline-inner">
     <p class="logline-label">The Series</p>
     <p class="logline-text">
-      One year ago, <em>Jesse Calloway</em> gave up Nashville and a promising music career to come home to Georgia after his sister's sudden death. Now he's raising her twelve-year-old daughter, <em>Birdie</em>, barely holding together his family's once-beloved peach orchard...and counting down the days until he can sell the whole thing and never look back.
+      One year ago, <em>Jesse Calloway</em> gave up Nashville and a promising songwriting career to come home to Georgia after her brother's sudden death. Now she's raising his twelve-year-old daughter, <em>Birdie</em>, barely holding together her family's once-beloved peach orchard&hellip;and counting down the days until she can sell the whole thing and never look back.
     </p>
     <p class="logline-text">
-      Until a woman walks into a bar.
+      Until a man walks into a bar.
     </p>
     <p class="logline-text">
       And <em>everything</em> changes.
@@ -697,12 +805,12 @@ body {
     </div>
     <div class="world-card">
       <h3 class="card-title">The Heart</h3>
-      <p class="card-text">PEACHES is a love story ~ or two, all tangled up in one. Jesse and Nora have chemistry that starts with a lie and has got nowhere to go but south. He's falling for a woman whose last name is on the paperwork that could take everything away; and she's having a real bad day for a whole year.</p>
-      <p class="card-text">Meanwhile, <span style="color: var(--peach);">Casey Greer</span>, the girl Jesse left without a goodbye, is right next door with ten years of unresolved feelings and a mighty short fuse. For the record, peaches when thrown, <em>hurt</em>.</p>
+      <p class="card-text">PEACHES is a love story ~ or two, all tangled up in one. Jesse and Noah have chemistry that starts with a lie and has got nowhere to go but south. She's falling for a man whose last name is on the paperwork that could take everything away; and he's having a real bad day for a whole year.</p>
+      <p class="card-text">Meanwhile, <span style="color: var(--peach);">Casey Greer</span>, the guy Jesse left without a goodbye, is right next door with ten years of unresolved feelings and a mighty short fuse. For the record, peaches when thrown, <em>hurt</em>.</p>
     </div>
     <div class="world-card">
       <h3 class="card-title">The Comedy</h3>
-      <p class="card-text"><span style="color: var(--peach);">PEACHES</span> finds its humor in the sweet, mushy bits of life. A man who can write a song that makes you cry but can't keep a snarky twelve-year-old from outsmarting him before breakfast. A corporate lawyer in $400 heels learning what a rootstock is. An eighty-year-old patriarch who answers every question about the future with a story about Nixon. A town where every barstool and barbecue knows your damn business.</p>
+      <p class="card-text"><span style="color: var(--peach);">PEACHES</span> finds its humor in the sweet, mushy bits of life. A woman who can write a song that makes you cry but can't keep a snarky twelve-year-old from outsmarting her before breakfast. A corporate lawyer in $400 shoes learning what a rootstock is. An eighty-year-old matriarch who answers every question about the future with a story about Nixon. A town where every barstool and barbecue knows your damn business.</p>
     </div>
   </div>
 </section>
@@ -718,20 +826,71 @@ body {
   <h2 class="section-title" style="color: var(--peach);">ENGINE</h2>
 
   <p class="engine-text">
-    Jesse Calloway doesn't want to save the family orchard. He wants to sign the papers, take the money, and disappear back into a life that doesn't remind him of everyone he's lost. But when a one-night encounter with a sharp-tongued lawyer turns into the discovery that the buyer circling his family's land isn't what they seem, he's pulled into a fight he never asked for.
+    Jesse Calloway doesn't want to save the family orchard. She wants to sign the papers, take the money, and disappear back into a life that doesn't remind her of everyone she's lost. But when a one-night encounter with a sharp-tongued lawyer turns into the discovery that the buyer circling her family's land isn't what they seem, she's pulled into a fight she never asked for.
   </p>
 
   <p class="engine-text">
-    With only his twelve-year-old niece (who may be smarter than all of them), an eighty-year-old grandfather guarding a dangerous secret, and a woman from the wrong side of the deal who's risking everything to help him, Jesse has to learn how to farm, how to parent, and how to <i>stay</i>, the one thing he's never been able to do.
+    With only her twelve-year-old niece (who may be smarter than all of them), an eighty-year-old grandmother guarding a dangerous secret, and a man from the wrong side of the deal who's risking everything to help her, Jesse has to learn how to farm, how to parent, and how to <i>stay</i> — the one thing she's never been able to do.
   </p>
 
   <p class="engine-text">
-    Each episode deepens a mystery amidst relentless pressure ~ weather that won't cooperate, a harvest window that waits for no one, and a crew that's being quietly poached. Neighboring farmers are selling out, a love triangle simmers, and beneath it all, two secrets ~ one buried in the land, one in the past ~ threaten to surface and change everything the Calloways thought they knew about their family, their orchard, and the sister whose death brought them all back together.
+    Each episode deepens a mystery amidst relentless pressure ~ weather that won't cooperate, a harvest window that waits for no one, and a crew that's being quietly poached. Neighboring farmers are selling out, a love triangle simmers, and beneath it all, two secrets ~ one buried in the land, one in the past ~ threaten to surface and change everything the Calloways thought they knew about their family, their orchard, and the brother whose death brought them all back together.
   </p>
 
   <p class="engine-text">
     <span style="color: var(--peach);">PEACHES</span> is a show about small farms and big lies. About a town worth fighting for and a family learning, one bruising season at a time, that the things most worth keeping are the ones you have to tend every single day.
   </p>
+</section>
+
+<section class="characters">
+  <div class="characters-inner">
+    <div style="text-align:center; margin-bottom: 4rem;">
+      <p class="section-label">The Characters</p>
+      <h2 class="section-title" style="color: var(--peach-deep);">Who They Are</h2>
+    </div>
+    <div class="char-grid">
+      <div class="char-card">
+        <h3 class="char-name">Jesse Calloway</h3>
+        <p class="char-role">The Runner &bull; 30s</p>
+        <p class="char-desc">Came home a year ago when her brother Wren died. Gave up Nashville and a promising songwriting career. Now she's raising Wren's twelve-year-old daughter and running an orchard she never wanted. She's ready to sell. She's ready to leave. She's always ready to leave — that's the problem. Jesse believes this place is cursed. Her parents died young. Her brother died. If they don't get out, they'll all die here too.</p>
+      </div>
+      <div class="char-card">
+        <h3 class="char-name">Mae Calloway</h3>
+        <p class="char-role">The Matriarch &bull; 80</p>
+        <p class="char-desc">Built the orchard with her late husband. Her face is on the label. Fought for this land through droughts, through years without subsidies, through every offer and every shortcut. Over her dead body will they sell. And yet — Mae carries a secret about this land. Something she told only one person: her grandson, Wren. He's gone now. And Mae believes it's her fault.</p>
+      </div>
+      <div class="char-card">
+        <h3 class="char-name">Birdie Calloway</h3>
+        <p class="char-role">The Kid &bull; 12</p>
+        <p class="char-desc">Wren's daughter. Jesse's problem. Three generations of Calloway women on this land and she's the youngest. A voracious reader who asks "why" about everything and doesn't accept "because" as an answer. Obsessed with technology. Barely tolerates Jesse — in her mind, her aunt abandoned her father, showed up too late, and now wants to sell mama's trees. She's also the first person to sense that the buyer isn't everything they claim to be.</p>
+      </div>
+      <div class="char-card">
+        <h3 class="char-name">Noah Shaw</h3>
+        <p class="char-role">The Outsider &bull; 30s</p>
+        <p class="char-desc">Sharp, driven, buttoned-up. His mother runs the VC firm circling the Calloway land. His sister was just chosen over him to lead every deal — despite Noah being smarter and more capable. He arrives in town to close an acquisition. Meets a woman in a bar. And over the course of the series, Noah will have to decide what matters more: the family he was born into, or the truth he can no longer ignore.</p>
+      </div>
+      <div class="char-card">
+        <h3 class="char-name">Virginia Shaw</h3>
+        <p class="char-role">The Architect &bull; 60s</p>
+        <p class="char-desc">Noah's mother. Runs the firm from Atlanta. Elegant, formidable, utterly convinced she's doing good. The reality is more complicated. Her company buys struggling operations, strips the authenticity, repackages it at scale, and sells the illusion of handmade to a market hungry for it. She chose her daughter Carter over her son Noah — not because Carter is smarter, but because Carter is ruthless. And in Virginia's world, a conscience is a liability.</p>
+      </div>
+      <div class="char-card">
+        <h3 class="char-name">Carter Shaw</h3>
+        <p class="char-role">Her Mother's Daughter &bull; 30s</p>
+        <p class="char-desc">Noah's sister. Vicious, ambitious, determined to prove she deserves the empire their mother built. She's not as smart as her brother, and she knows it, which makes her more dangerous. She also carries a secret about the day Jesse's brother Wren died.</p>
+      </div>
+      <div class="char-card">
+        <h3 class="char-name">Casey Greer</h3>
+        <p class="char-role">The One Who Stayed &bull; 30s</p>
+        <p class="char-desc">Grew up next door. Jesse left him without a goodbye a decade ago. He switched off peaches years back — too fragile, too risky — and now farms something tougher. He's furious at Jesse. He also knows the land better than anyone alive. She needs his help. He hasn't decided if she deserves it. The love triangle starts here.</p>
+      </div>
+      <div class="char-card">
+        <h3 class="char-name">Dale Briggs</h3>
+        <p class="char-role">The Good Man in a Bad Spot &bull; 40s</p>
+        <p class="char-desc">Foreman of the orchard crew. Fifteen years on the land. His wife is sick and the insurance through the orchard barely covers anything. When the buyer quietly approaches him with an offer — triple salary, full medical, in exchange for inside information about the property — Dale is forced into an impossible choice between loyalty and survival.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
 <section class="footer">
@@ -746,5 +905,30 @@ body {
   <p class="footer-credit">The Camp Brand &bull; 2026</p>
 </section>
 
+<script>
+(function() {
+  if (sessionStorage.getItem('peaches_auth') === 'true') {
+    document.getElementById('password-gate').classList.add('hidden');
+  }
+})();
+
+function checkPassword() {
+  var input = document.getElementById('gate-input');
+  var error = document.getElementById('gate-error');
+  if (input.value === 'orchard') {
+    sessionStorage.setItem('peaches_auth', 'true');
+    document.getElementById('password-gate').classList.add('hidden');
+  } else {
+    error.textContent = 'Incorrect password.';
+    input.classList.add('error');
+    input.value = '';
+    setTimeout(function() { input.classList.remove('error'); }, 400);
+  }
+}
+
+document.getElementById('gate-input').addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') checkPassword();
+});
+</script>
 </body>
 </html>
