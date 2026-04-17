@@ -579,6 +579,92 @@ body {
 
 .engine-art-mobile { display: none; position: relative; z-index: 1; }
 
+.bio {
+  padding: 8rem 2rem;
+  position: relative;
+  background-image: url('painting.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.bio::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 248, 240, 0.91);
+  z-index: 0;
+}
+
+.bio-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+}
+
+.bio-text {
+  flex: 1;
+}
+
+.bio-art {
+  flex: 0 0 340px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bio-art img {
+  width: 100%;
+  max-width: 340px;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+}
+
+.bio-name {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.4rem;
+}
+
+.bio-role {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  margin-bottom: 2rem;
+}
+
+.bio-body {
+  font-family: 'Lora', serif;
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: var(--earth-light);
+  margin-bottom: 1.25rem;
+}
+
+.bio-body:last-of-type {
+  margin-bottom: 0;
+}
+
+.bio-link {
+  color: var(--peach-deep);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(224, 122, 58, 0.35);
+  transition: border-color 0.2s ease;
+}
+
+.bio-link:hover {
+  border-color: var(--peach-deep);
+}
+
 .footer {
   padding: 5rem 2rem;
   text-align: center;
@@ -744,6 +830,10 @@ body {
   .metaphor-art-mobile { display: block; width: 240px; margin-top: 2.5rem; }
   .engine::after { display: none; }
   .engine-art-mobile { display: block; width: 260px; margin: 2.5rem auto 0; }
+  .bio { padding: 5rem 1.5rem; }
+  .bio-inner { flex-direction: column; gap: 2.5rem; }
+  .bio-art { flex: none; width: 100%; }
+  .bio-art img { max-width: 280px; margin: 0 auto; }
 }
 </style>
 </head>
@@ -869,6 +959,24 @@ body {
   <img class="engine-art-mobile" src="pie.png" alt="" />
 </section>
 
+
+<section class="bio">
+  <div class="bio-inner">
+    <div class="bio-text">
+      <p class="section-label">The Creator</p>
+      <h2 class="bio-name">
+        <span style="color: var(--peach-deep);">Brandon Camp</span>
+      </h2>
+      <p class="bio-role">Writer / Director / Producer</p>
+      <p class="bio-body">A writer/director/producer and content creator for large and small screens, Brandon's produced projects include Netflix's international hit, <em>Love &amp; Gelato</em>, a modern retelling of <em>Benji</em>, Universal's <em>Love Happens</em> with Jennifer Aniston, the Kevin Costner film <em>Dragonfly</em>, and the Fox series <em>John Doe</em>, among others. He has most recently worked on a Skydance series starring Tim McGraw.</p>
+      <p class="bio-body">He has created branding campaigns and directed spots for the likes of Ford Motor Company, Liberty Mutual, Lincoln Motor Company, The Ad Council, and Feeding America to name a few.</p>
+      <p class="bio-body">He is represented by United Talent Agency and TFC Management. <a class="bio-link" href="http://www.thecampbrand.com" target="_blank">www.thecampbrand.com</a></p>
+    </div>
+    <div class="bio-art">
+      <img src="bucket.png" alt="Brandon Camp" />
+    </div>
+  </div>
+</section>
 
 <section class="footer">
   <p class="footer-quote">
